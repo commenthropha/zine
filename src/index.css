@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Parisienne&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-family-display: 'Playfair Display', serif;
+  --font-family-handwritten: 'Parisienne', cursive;
+  --font-family-body: 'Lora', serif;
+  --color-cream-light: #edede9;
+  --color-cream: #f5ebe0;
+  --color-cream-warm: #e3d5ca;
+  --color-sand-light: #d6ccc2;
+  --color-sand: #d5bdaf;
+  --color-rose-light: #ffcad4;
+  --color-rose: #f4acb7;
+  --color-rose-coral: #ffb4a2;
+  --color-mauve: #9d8189;
+  
+  --animate-blob: blob 7s infinite;
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--color-cream-light);
+    color: rgb(17 24 39);
+    font-family: var(--font-family-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-display);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  
+  .paper-texture {
+    background-image: 
+      linear-gradient(45deg, transparent 48%, rgba(0,0,0,0.02) 49%, rgba(0,0,0,0.02) 51%, transparent 52%),
+      linear-gradient(-45deg, transparent 48%, rgba(0,0,0,0.02) 49%, rgba(0,0,0,0.02) 51%, transparent 52%);
+    background-size: 3px 3px;
+  }
+}
